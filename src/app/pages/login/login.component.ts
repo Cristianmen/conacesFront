@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  icon = 'qwerqwer'
-  text = 'eerrr'
-  tittle = 'erert'
+  icon = 'fa-cog'
+  text = 'La comisión Nacional de Aseguramiento de Calidad de la educación Superior .(Ampliar)'
+  tittle = 'QUE ES LA CONACES'
   constructor() { }
 
   ngOnInit(): void {
