@@ -1,48 +1,39 @@
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <nav class="navbar navbar-expand-lg  navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Sign up |</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
 
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="navbar-brand" href="#">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-<!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="" >Sign up</button>
-    <button class="" >Login</button>
-  </div>//-->
-
-<div class="container ">
-    <div class="row justify-content-md-center">
-        <div class="col-6">
-            <h1>CONACES</h1>
-            <p>Comisión nacional de aseguramiento de Calidad de la educación superior</p>
-        </div>
-        
-        <div class="col-6 " >
-           <span><img id="escudo" src="assets/img/la-educacion-es-de-todos.png"  ></span> 
-            
-        </div>
-    </div>
-</div>
-
-<hr>
 
 <div class="container">
 
-    <app-card-login [icon]="icon" [tittle]="tittle" [text]="text"> </app-card-login>
+    <div class="row">
+        <div class="col-6">
+            <app-card-login [icon]="textCards[0].icon" [tittle]="textCards[0].tittle" [text]="textCards[0].text" (click)= "goToviews('/conaces')">
+            </app-card-login>
+        </div>
+        <div class="col-6">
+            <app-card-login [icon]="textCards[1].icon" [tittle]="textCards[1].tittle" [text]="textCards[1].text" (click)= "goToviews('/repositorios')">
+            </app-card-login>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <app-card-login [icon]="textCards[2].icon" [tittle]="textCards[2].tittle" [text]="textCards[2].text" (click)= "goToviews('/preguntas')">
+            </app-card-login>
+        </div>
+        <div class="col-6">
+            <app-card-login [icon]="textCards[3].icon" [tittle]="textCards[3].tittle" [text]="textCards[3].text" (click)= "goToviews('/eventos')">
+            </app-card-login>
+        </div>
+
+    </div>
+    <br>
+
+    <div class="row justify-content-end">
+        <div class="cardSimple">
+            <app-card-login [icon]="textCards[4].icon" [tittle]="textCards[4].tittle" [text]="textCards[4].text" (click)= "goToviews('/eventos')">
+            </app-card-login>
+        </div>
+    </div>
+
 
 </div>
 
-<hr>
