@@ -1,9 +1,13 @@
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <nav class="navbar navbar-expand-lg  navbar-light">
-        <div class="container-fluid">
+        <div class="container-fluid" *ngIf="!AdminService.isAdmin">
             <button type="button" class="btn btn-unset " data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Sign up
             </button>
+        </div>
+
+        <div class="container-fluid" *ngIf="AdminService.isAdmin">
+            bienvenido {{AdminService.name}}
         </div>
     </nav>
 </div>

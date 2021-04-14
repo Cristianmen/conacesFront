@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   goToviews(view: string){
-    this.router.navigate([view])
+    this.router.navigate([view]);
     
   }
 
