@@ -11,11 +11,17 @@ import { RepositoriesComponent } from './pages/repositories/repositories.compone
 import { FrequentQuestionsComponent } from './pages/frequent-questions/frequent-questions.component';
 import { EventComponent } from './pages/event/event.component';
 import { ModalLoginComponent } from './componentes/modal-login/modal-login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { LoadingComponent } from './componentes/loading/loading.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { HomeAdminComponent } from './pages/home-admin/home-admin.component'
 
 
 
 @NgModule({
   declarations: [
+    LoadingComponent,
     AppComponent,
     LoginComponent,
     CardLoginComponent,
@@ -23,12 +29,16 @@ import { ModalLoginComponent } from './componentes/modal-login/modal-login.compo
     RepositoriesComponent,
     FrequentQuestionsComponent,
     EventComponent,
-    ModalLoginComponent
+    ModalLoginComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    MatSliderModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

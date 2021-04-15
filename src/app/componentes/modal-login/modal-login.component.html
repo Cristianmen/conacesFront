@@ -1,22 +1,33 @@
 <form [formGroup]="formLogin">
+
+   
     <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Inicio de sesion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" id="btn-modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
+        <div class="alert alert-warning" role="alert" *ngIf="alertError">
+            <strong>Algo salio mal!</strong> por favor verifica tus datos.
+          
+        </div>
 
         <div class="form-floating mb-3">
-            <input type="email" formControlName="username" class="form-control" id="floatingInput" placeholder="usuario">
+            <input type="email" formControlName="username" class="form-control" id="floatingInput"
+                placeholder="usuario">
             <label for="floatingInput">Usuario</label>
         </div>
         <div class="form-floating">
-            <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+            <input type="password" formControlName="password" class="form-control" id="floatingPassword"
+                placeholder="Contraseña">
             <label for="floatingPassword">Contraseña</label>
         </div>
 
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" [disabled]="!formLogin.valid" (click)="enviar()">Save changes</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!formLogin.valid" (click)="enviar()">Save
+            changes</button>
     </div>
 </form>
+
+<app-loading *ngIf="loading"></app-loading>
