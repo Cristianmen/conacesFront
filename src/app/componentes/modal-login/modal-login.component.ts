@@ -14,6 +14,13 @@ export class ModalLoginComponent implements OnInit {
 
   formLogin: FormGroup;
 
+  configAlert = { 
+    type:'warning',
+    strong: 'Algo salio mal!',
+    text: ' por favor verifica tus datos.'
+
+  }
+
   loading = false;
   alertError = false;
 
