@@ -18,7 +18,8 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { HomeAdminComponent } from './pages/home-admin/home-admin.component';
 import { AdminReposComponent } from './pages/admin-repos/admin-repos.component';
 import { AdminPreguntasComponent } from './pages/admin-preguntas/admin-preguntas.component';
-import { AdminEventosComponent } from './pages/admin-eventos/admin-eventos.component'
+import { AdminEventosComponent } from './pages/admin-eventos/admin-eventos.component';
+import { AlertComponent } from './componentes/alert/alert.component'
 
 
 
@@ -36,7 +37,8 @@ import { AdminEventosComponent } from './pages/admin-eventos/admin-eventos.compo
     HomeAdminComponent,
     AdminReposComponent,
     AdminPreguntasComponent,
-    AdminEventosComponent
+    AdminEventosComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

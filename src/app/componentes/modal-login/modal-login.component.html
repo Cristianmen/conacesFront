@@ -6,10 +6,8 @@
         <button type="button" id="btn-modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <div class="alert alert-warning" role="alert" *ngIf="alertError">
-            <strong>Algo salio mal!</strong> por favor verifica tus datos.
-          
-        </div>
+
+        <app-alert [config]="configAlert" *ngIf="alertError" ></app-alert>
 
         <div class="form-floating mb-3">
             <input type="email" formControlName="username" class="form-control" id="floatingInput"
