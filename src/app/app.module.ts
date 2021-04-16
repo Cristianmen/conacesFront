@@ -15,7 +15,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { LoadingComponent } from './componentes/loading/loading.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
-import { HomeAdminComponent } from './pages/home-admin/home-admin.component'
+import { HomeAdminComponent } from './pages/home-admin/home-admin.component';
+import { AdminReposComponent } from './pages/admin-repos/admin-repos.component';
+import { AdminPreguntasComponent } from './pages/admin-preguntas/admin-preguntas.component';
+import { AdminEventosComponent } from './pages/admin-eventos/admin-eventos.component'
 
 
 
@@ -30,7 +33,10 @@ import { HomeAdminComponent } from './pages/home-admin/home-admin.component'
     FrequentQuestionsComponent,
     EventComponent,
     ModalLoginComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    AdminReposComponent,
+    AdminPreguntasComponent,
+    AdminEventosComponent
   ],
   imports: [
     BrowserModule,

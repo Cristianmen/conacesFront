@@ -26,7 +26,7 @@ export class ModalLoginComponent implements OnInit {
     this.formLogin = this.fb.group({
       username: new FormControl('', [
         Validators.required,
-        Validators.maxLength(5)
+        Validators.maxLength(8)
       ]),
       password: new FormControl('', [
         Validators.required
