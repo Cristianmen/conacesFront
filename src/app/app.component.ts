@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminDataService } from './services/adminData/admin-data.service';
 
 @Component({
@@ -13,11 +14,16 @@ export class AppComponent {
   name = '';
 
   constructor(
-
+    private readonly router : Router,
     public readonly AdminService: AdminDataService,
   ){
 
     this.isAdmin = this.AdminService.isAdmin;
     this.name = this.AdminService.name;
+  }
+
+  cerrar(){
+    this.AdminService.isAdmin = false;
+    this.router.navigate(['/login']);
   }
 }

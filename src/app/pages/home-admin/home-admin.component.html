@@ -1,1 +1,30 @@
-<p>home-admin works!</p>
+<div class="container">
+
+    <div class="container">
+        <h2>Hola {{AdminService.name}}, estas en el modulo administrativo de Conaces</h2>
+    </div>
+
+    <p></p>
+
+    <div class="row">
+        <div class="col-6">
+            <app-card-login [icon]="textCardsAdmin[0].icon" [tittle]="textCardsAdmin[0].tittle" [text]="textCardsAdmin[0].text" (click)= "goToviews('/adminRepositorios')">
+            </app-card-login>
+        </div>
+        <div class="col-6">
+            <app-card-login [icon]="textCardsAdmin[1].icon" [tittle]="textCardsAdmin[1].tittle" [text]="textCardsAdmin[1].text" (click)= "goToviews('/adminPreguntas')">
+            </app-card-login>
+        </div>
+
+    </div>
+    <br>
+
+    <div class="row justify-content-end">
+        <div class="cardSimple">
+            <app-card-login [icon]="textCardsAdmin[2].icon" [tittle]="textCardsAdmin[2].tittle" [text]="textCardsAdmin[2].text" (click)= "goToviews('/adminEventos')">
+            </app-card-login>
+        </div>
+    </div>
+
+
+</div>

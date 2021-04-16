@@ -2,12 +2,14 @@
     <nav class="navbar navbar-expand-lg  navbar-light">
         <div class="container-fluid" *ngIf="!AdminService.isAdmin">
             <button type="button" class="btn btn-unset " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Sign up
+                Log in
             </button>
         </div>
 
         <div class="container-fluid" *ngIf="AdminService.isAdmin">
-            bienvenido {{AdminService.name}}
+            <button type="button" class="btn btn-unset" (click)= "cerrar()">
+                Log out
+            </button>
         </div>
     </nav>
 </div>
