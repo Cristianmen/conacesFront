@@ -24,7 +24,7 @@ export class AdminReposComponent implements OnInit {
     }
   ];
 
-  formType = true
+  formType = false
 
   configAlertSuccess = { 
     type:'success',
