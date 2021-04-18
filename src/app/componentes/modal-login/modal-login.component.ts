@@ -45,7 +45,7 @@ export class ModalLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  
   enviar() {
     this.loading = true;
     this.alertError = false;
