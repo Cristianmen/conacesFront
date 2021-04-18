@@ -46,6 +46,13 @@ export class AdminReposComponent implements OnInit {
 
   }
 
+  configAlertSuccessDelete = {
+    type: 'success',
+    strong: 'Eliminación Exitosa!',
+    text: `el repositorio se borro correctamente.`
+
+  }
+
   base64: any;
   constructor(
     private readonly fb: FormBuilder,
@@ -65,6 +72,13 @@ export class AdminReposComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.isAlert = false;
+    this.dataRepos = [
+      {
+        repoId:'',
+        content:''
+      }
+    ];
   }
 
   enviar(){
@@ -80,10 +94,14 @@ export class AdminReposComponent implements OnInit {
       reponse => {
         this.loading = false;
         this.isAlert = true;
-        this.configAlert = this.configAlertSuccess;
-        console.log('reponse', reponse);
 
-        
+        if (reponse.body.users.length > 0) {
+          this.dataRepos = reponse.body.users 
+        } else {
+          this.dataRepos = [] 
+          this.configAlert = this.configAlertTable
+        }
+    
      
       },
       error => {
@@ -107,7 +125,6 @@ export class AdminReposComponent implements OnInit {
       this.serviceHttp.requestHttp('get', `${environment.API}repositorios`).subscribe(
         reponse => {
           this.loading = false;
-          this.isAlert = true;
           this.dataRepos = reponse.body.users  
         },
         error => {
@@ -120,11 +137,43 @@ export class AdminReposComponent implements OnInit {
 
   }
 
-  eliminar(index: any){
+  ver(index: any){
     const win = window.open(this.dataRepos[index].content, '_blank');
     win?.focus();
 
   }
+
+  eliminar(index: any){
+    this.loading = true;
+    this.isAlert = false;
+
+    const body = {
+      repoId: this.dataRepos[index].repoId,
+    }
+
+    this.serviceHttp.requestHttp('delete', `${environment.API}repositorios`, body).subscribe(
+      reponse => {
+        this.loading = false;
+        this.isAlert = true;
+        this.configAlert = this.configAlertSuccessDelete;
+        console.log('reponse', reponse);
+        setTimeout(() => {
+          
+          this.dataRepos = []
+          this.view(false);
+        }, 2000);
+       
+      },
+      error => {
+        this.loading = false;
+        this.isAlert = true;
+        this.configAlert = this.configAlertError;
+        console.log('error', error);
+
+      })
+
+  }
+
   loadFile(event: any){
 
     const input = event.target;
