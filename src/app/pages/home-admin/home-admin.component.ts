@@ -14,18 +14,18 @@ export class HomeAdminComponent implements OnInit {
 
     {
       icon: 'fa-download',
-      text: 'La comisión Nacional de Aseguramiento de Calidad de la educación Superior .(Ampliar)',
+      text: 'Permite la administración de los repositoros (crear y borrar)',
       tittle: 'ADMINISTRAR REPOSITORIOS'
     },
     
     {
       icon: 'fa-question-circle',
-      text: 'La comisión Nacional de Aseguramiento de Calidad de la educación Superior .(Ampliar)',
+      text: 'Permite la administración de Preguntas frecuentes (crear y borrar)',
       tittle: 'ADMINISTRAR PREGUNTAS FRECUENTES'
     },
     {
       icon: 'fa-calendar-alt',
-      text: 'La comisión Nacional de Aseguramiento de Calidad de la educación Superior .(Ampliar)',
+      text: 'Permite la administración de los Eventos (crear y borrar)',
       tittle: 'ADMINISTRAR EVENTOS'
     },
 
