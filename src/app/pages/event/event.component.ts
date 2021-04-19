@@ -24,7 +24,8 @@ export class EventComponent implements OnInit {
       fecha: '',
       hora:'',
       tema: '',
-      descripcion:''
+      descripcion:'',
+      asistentes:[]
     }
   ];
 
@@ -151,6 +152,10 @@ export class EventComponent implements OnInit {
     console.log('joooj');
     
     this.AdminService.dataEventos = this.dataEvents[i];
+    debugger
+
+    this.AdminService.asistentes = this.dataEvents[i].asistentes? this.dataEvents[i].asistentes.length>0? this.dataEvents[i].asistentes: []: [];
+
     this.isSuscrip = true;
 
 
