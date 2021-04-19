@@ -24,7 +24,7 @@ export class FrequentQuestionsComponent implements OnInit {
     }
   ];
 
-  formType = true
+  formType = false
 
 
   configAlertTable = {
@@ -52,14 +52,16 @@ export class FrequentQuestionsComponent implements OnInit {
         descripcion: ''
       }
     ];
+    this.view();
+    
   }
 
  
-  view(view: boolean) {
+  view() {
     this.isAlert = false;
-    this.formType = view;
+    
 
-    if (!view) {
+    
       this.loading = true;
 
       this.serviceHttp.requestHttp('get', `${environment.API}preguntas`).subscribe(
@@ -75,7 +77,7 @@ export class FrequentQuestionsComponent implements OnInit {
           }
         },
        )
-    }
+    
   } 
 
 }
