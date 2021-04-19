@@ -19,9 +19,14 @@
         <br>
         <form [formGroup]="formEvent">
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 " *ngIf="!isModificar">
                 <input type="text" formControlName="nombre" class="form-control" id="floatingInput"
                     placeholder="Nombre Evento">
+                <label for="floatingInput">Nombre Evento:</label>
+            </div>
+            <div class="form-floating mb-3 " *ngIf="isModificar">
+                <input type="text" formControlName="nombre" class="form-control" id="floatingInput"
+                    placeholder="Nombre Evento" readonly>
                 <label for="floatingInput">Nombre Evento:</label>
             </div>
             <div class="form-floating  mb-3">
@@ -78,7 +83,7 @@
                     <th class="text-center" scope="col">Hora</th>
                     <th class="text-center" scope="col">Tema</th>
                     <th class="text-center" scope="col">Descripción</th>
-                    <th class="text-center" scope="col">Accción</th>
+                    <th class="text-center" scope="col"  colspan="2">Accción</th>
 
                 </tr>
             </thead>
@@ -93,6 +98,10 @@
 
                     <td class="text-center" style="cursor: pointer;" (click)="eliminar(i)">
                         <a>Eliminar</a>
+
+                    </td>
+                    <td class="text-center" style="cursor: pointer;" (click)="modificar(i)">
+                        <a>Modificar</a>
 
                     </td>
 

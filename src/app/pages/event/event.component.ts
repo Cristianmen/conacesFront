@@ -104,6 +104,10 @@ export class EventComponent implements OnInit {
       ]),
       descripcion: new FormControl('', [
         Validators.required
+      ]),
+
+      tt: new FormControl('', [
+        Validators.required
       ])
 
     });
@@ -149,8 +153,45 @@ export class EventComponent implements OnInit {
       reponse => {
         this.loading = false;
 
+        let arrayIndex = [
+          ''
+        ];
+        let arrayIndex2 = [
+          { foroId: '', tema: '', descripcion: ''    }
+        ];
+
         if (reponse.body.users.length > 0) {
-          this.dataForo = reponse.body.users
+          arrayIndex2 = [];
+          arrayIndex = [];
+          arrayIndex2 = reponse.body.users
+          
+          arrayIndex2.forEach(element => {
+            
+            arrayIndex.push(element.foroId);
+          });
+          arrayIndex.sort();
+          this.dataForo = [];
+
+          arrayIndex.forEach(element => {
+
+            arrayIndex2.forEach((element2,index) => {
+              if (element === element2.foroId) {
+                this.dataForo.push(element2)        
+              }
+            });
+          });
+
+          let textArea = ''
+          this.dataForo.forEach(element => {
+            textArea  += `* ${element.descripcion}\n`
+          });
+
+          this.formForo.get('tt')?.setValue(textArea)
+
+        
+         
+          console.log('this.dataForo despues', this.dataForo);
+          
         } else {
           this.dataForo = [];
           this.isAlert = true;
@@ -166,6 +207,9 @@ export class EventComponent implements OnInit {
 
       })
   }
+
+
+ 
 
   enviarForo(){
 
@@ -183,6 +227,7 @@ export class EventComponent implements OnInit {
         this.loading = false;
         this.dataForo = []
         this.viewForo()
+        this.getdescripcion()?.setValue('');
        
         console.log('reponse', reponse);
        

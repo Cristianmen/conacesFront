@@ -20,6 +20,7 @@ import { AdminReposComponent } from './pages/admin-repos/admin-repos.component';
 import { AdminPreguntasComponent } from './pages/admin-preguntas/admin-preguntas.component';
 import { AdminEventosComponent } from './pages/admin-eventos/admin-eventos.component';
 import { AlertComponent } from './componentes/alert/alert.component';
+import { SuscripcionComponent } from './componentes/suscripcion/suscripcion.component';
 
 
 
@@ -39,7 +40,8 @@ import { AlertComponent } from './componentes/alert/alert.component';
     AdminReposComponent,
     AdminPreguntasComponent,
     AdminEventosComponent,
-    AlertComponent  ],
+    AlertComponent,
+    SuscripcionComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
