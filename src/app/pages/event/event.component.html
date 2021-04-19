@@ -71,28 +71,33 @@
         <div class="col-8">
 
             <div class="card">
-                <div class="card-body">
+                <div class="card-body overflow-auto">
                     <h3 class="card-title"> <strong>Foro</strong></h3>
+                
+
                     <hr>
-                    <tr *ngFor="let item of dataForo; let i = index">
-                        <td>
-                           * {{item.descripcion }}
-                        </td>
-                    </tr>
-                    <hr>
-                    <form class="form-inline"  [formGroup]="formForo">
+                    <form class="form-inline" [formGroup]="formForo">
+
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                formControlName="tt" id="floatingTextarea2" style="height: 200px"
+                                readonly></textarea>
+                            <label for="floatingTextarea2"></label>
+                        </div>
+                        <br>
                         <div class="row">
-                           
+
                             <div class="col-7">
-                               
+
                                 <div class="form-group ">
                                     <label for="inputPassword2" class="sr-only">mensaje</label>
-                                    <input type="text" class="form-control" formControlName="descripcion" id="inputPassword2" placeholder="mesaje">
+                                    <input type="text" class="form-control" formControlName="descripcion"
+                                        id="inputPassword2" placeholder="mesaje">
                                 </div>
                             </div>
 
                             <div class="col-2">
-                                <button type="submit" class="btn btn-primary"  (click)="enviarForo()">Enviar</button>
+                                <button type="submit" class="btn btn-primary" (click)="enviarForo()">Enviar</button>
                             </div>
 
                         </div>

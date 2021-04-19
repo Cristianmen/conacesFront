@@ -19,10 +19,16 @@
         <br>
         <form [formGroup]="formRepo">
 
-            <div class="form-floating mb-3">
-                <input type="email" formControlName="repo" class="form-control" id="floatingInput"
+            <div class="form-floating mb-3" *ngIf="!isModificar">
+                <input type="text" formControlName="repo" class="form-control" id="floatingInput"
                     placeholder="nombre repositorios">
                 <label for="floatingInput">nombre del repositorio</label>
+            </div>
+
+            <div class="form-floating mb-3" *ngIf="isModificar">
+                <input type="text" formControlName="repo" class="form-control" id="floatingInput"
+                    placeholder="nombre repositorios" readonly>
+                <label for="floatingInput">nombre del repositorio modificar</label>
             </div>
             <div class="form-floating">
                 <input type="file" formControlName="file" class="form-control" id="floatingPassword"
@@ -46,7 +52,7 @@
                     <th class="text-center" scope="col">Número</th>
                     <th class="text-center" scope="col">Nombre</th>
                     <th class="text-center" scope="col">Acción</th>
-                    <th class="text-center" scope="col">Acción</th>
+                    <th class="text-center" scope="col"  colspan="2">Acción</th>
 
                 </tr>
             </thead>
@@ -62,6 +68,11 @@
 
                     <td class="text-center" style="cursor: pointer;" (click)="eliminar(i)">
                         <a>Eliminar</a>
+
+                    </td>
+
+                    <td class="text-center" style="cursor: pointer;" (click)="modificar(i)">
+                        <a>Modificar</a>
 
                     </td>
 

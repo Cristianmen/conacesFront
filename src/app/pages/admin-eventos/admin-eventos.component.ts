@@ -13,6 +13,7 @@ export class AdminEventosComponent implements OnInit {
   formEvent: FormGroup;
   isAlert = false;
   loading = false;
+  isModificar = false;
   configAlert = {};
 
   dataRepos = [
@@ -75,7 +76,7 @@ export class AdminEventosComponent implements OnInit {
     "universitaria arquitectura",
     "biologia",
     "biotecnologia",
-    "ciencias-politicas",
+    "ciencias politicas",
     "comercio internacional",
     "universitaria comunicación social",
     "contaduria",
@@ -84,7 +85,7 @@ export class AdminEventosComponent implements OnInit {
     "universitaria diseño gráfico",
     "universitaria diseño industrial",
     "universitaria economía",
-    "educacion-fisica",
+    "educacion fisica",
     "universitaria enfermería",
     "universitaria finanzas",
     "universitaria gastronomía",
@@ -171,6 +172,19 @@ export class AdminEventosComponent implements OnInit {
         console.log('error', error);
 
       })
+
+
+  }
+
+  modificar(index: any){
+    this.isModificar =  true
+    this.formType = true;
+
+    this.getnombre()?.setValue( this.dataRepos[index].nombre);
+    this.getfecha()?.setValue( this.dataRepos[index].fecha);
+    this.gethora()?.setValue( this.dataRepos[index].hora);
+    this.gettema()?.setValue( this.dataRepos[index].tema);
+    this.getdescripcion()?.setValue( this.dataRepos[index].descripcion);
 
 
   }

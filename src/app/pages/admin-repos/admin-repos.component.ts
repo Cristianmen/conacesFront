@@ -16,6 +16,7 @@ export class AdminReposComponent implements OnInit {
   isAlert = false;
   loading = false;
   configAlert = {};
+  isModificar = false;
 
   dataRepos = [
     {
@@ -135,6 +136,15 @@ export class AdminReposComponent implements OnInit {
          
         })
     }
+
+  }
+
+  modificar(index: any){
+    this.isModificar =  true
+    this.formType = true;
+
+    this.getRepo()?.setValue( this.dataRepos[index].repoId)
+
 
   }
 

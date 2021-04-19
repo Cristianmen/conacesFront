@@ -14,6 +14,7 @@ export class AdminPreguntasComponent implements OnInit {
   formPreg: FormGroup;
   isAlert = false;
   loading = false;
+  isModificar = false;
   configAlert = {};
 
   dataRepos = [
@@ -167,6 +168,17 @@ export class AdminPreguntasComponent implements OnInit {
 
 
   }
+
+  modificar(index: any){
+    this.isModificar =  true
+    this.formType = true;
+
+    this.getPreg()?.setValue( this.dataRepos[index].preguntasId);
+    this.getRespu()?.setValue(this.dataRepos[index].descripcion)
+
+
+  }
+
 
 
   getPreg() {

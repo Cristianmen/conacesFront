@@ -21,9 +21,14 @@
         <br>
         <form [formGroup]="formPreg">
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3"  *ngIf="!isModificar">
                 <input type="text" formControlName="pregunta" class="form-control" id="floatingInput"
                     placeholder="Pregunta">
+                <label for="floatingInput">Pregunta</label>
+            </div>
+            <div class="form-floating mb-3"  *ngIf="isModificar">
+                <input type="text" formControlName="pregunta" class="form-control" id="floatingInput"
+                    placeholder="Pregunta" readonly>
                 <label for="floatingInput">Pregunta</label>
             </div>
             <div class="form-floating">
@@ -48,7 +53,7 @@
                     <th class="text-center" scope="col">Número</th>
                     <th class="text-center" scope="col">Pregunta</th>
                     <th class="text-center" scope="col">Respuesta</th>
-                    <th class="text-center" scope="col">Acción</th>
+                    <th class="text-center" scope="col" colspan="2">Acción</th>
 
                 </tr>
             </thead>
@@ -60,6 +65,11 @@
 
                     <td class="text-center" style="cursor: pointer;" (click)="eliminar(i)">
                         <a>Eliminar</a>
+
+                    </td>
+
+                    <td class="text-center" style="cursor: pointer;" (click)="modificar(i)">
+                        <a>Modificar</a>
 
                     </td>
 
