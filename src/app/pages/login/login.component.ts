@@ -16,23 +16,23 @@ export class LoginComponent implements OnInit {
     },
     {
       icon: 'fa-download',
-      text: 'La comisión Nacional de Aseguramiento de Calidad de la educación Superior .(Ampliar)',
+      text: 'realiza la consulta de los documentos y lineamientos relacionados con la CONACES.',
       tittle: 'REPOSITORIOS'
     },
     
     {
       icon: 'fa-question-circle',
-      text: 'La comisión Nacional de Aseguramiento de Calidad de la educación Superior .(Ampliar)',
+      text: 'En esta seccion encuentras las preguntas frecuentes.',
       tittle: 'PREGUNTAS FRECUENTES'
     },
     {
       icon: 'fa-calendar-alt',
-      text: 'La comisión Nacional de Aseguramiento de Calidad de la educación Superior .(Ampliar)',
+      text: 'Entérate y participa en nuestros eventos',
       tittle: 'EVENTOS'
     },
     {
       icon: 'fa-users',
-      text: 'La comisión Nacional de Aseguramiento de Calidad de la educación Superior .(Ampliar)',
+      text: 'Participa en nuestro for y deja tus comentarios',
       tittle: 'FORO'
     }
   ];

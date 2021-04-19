@@ -1,5 +1,59 @@
-<p>event works!</p>
+
 
 <div class="container">
-    <a routerLink="/login" style="font-size: 20px;"><i class="fas fa-arrow-left"></i> Volver</a> |
+    <div class="container">
+        <a routerLink="/login" style="font-size: 20px;"><i class="fas fa-arrow-left"></i> Volver</a> |
+    </div>
+
+    <app-alert [config]="configAlert" *ngIf="isAlert"></app-alert>
+    <app-loading *ngIf="loading"></app-loading>
+
+
+    <div class="row">
+        <div class="col-5">
+            <div >
+                <app-card-login [icon]="textCardsAdmin[0].icon" [tittle]="textCardsAdmin[0].tittle" [text]="textCardsAdmin[0].text" >
+                </app-card-login>
+            </div>
+
+        </div>
+        <div class="col-7">
+
+            <div >
+
+                hola evento
+               
+            </div>
+           
+        
+
+        </div>
+     
+
+    </div>
+
+    <br><br>
+    <div class="row">
+        <div class="col-5">
+           
+            <div >
+                <app-card-login [icon]="textCardsAdmin[1].icon" [tittle]="textCardsAdmin[1].tittle" [text]="textCardsAdmin[1].text" >
+                </app-card-login>
+            </div>
+
+        </div>
+        <div class="col-7">
+
+            <div >
+               hola foro
+            </div>
+           
+         
+
+        </div>
+     
+
+    </div>
+    <br>
+
 </div>
