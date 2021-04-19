@@ -13,7 +13,14 @@ export class AdminDataService {
     hora:'',
     tema: '',
     descripcion:''
+   
   } ;
+  asistentes = [
+    {
+      name: '',
+      email: ''
+    }
+  ]
 
   constructor() { }
 }
