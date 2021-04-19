@@ -24,7 +24,7 @@ export class AdminReposComponent implements OnInit {
     }
   ];
 
-  formType = false
+  formType = true
 
   configAlertSuccess = { 
     type:'success',
@@ -94,14 +94,8 @@ export class AdminReposComponent implements OnInit {
       reponse => {
         this.loading = false;
         this.isAlert = true;
-
-        if (reponse.body.users.length > 0) {
-          this.dataRepos = reponse.body.users 
-        } else {
-          this.dataRepos = [] 
-          this.configAlert = this.configAlertTable
-        }
-    
+        this.configAlert = this.configAlertSuccess;
+      
      
       },
       error => {
@@ -126,6 +120,13 @@ export class AdminReposComponent implements OnInit {
         reponse => {
           this.loading = false;
           this.dataRepos = reponse.body.users  
+
+          if (reponse.body.users.length > 0) {
+            this.dataRepos = reponse.body.users 
+          } else {
+            this.dataRepos = [] 
+            this.configAlert = this.configAlertTable
+          }
         },
         error => {
           this.loading = false;
