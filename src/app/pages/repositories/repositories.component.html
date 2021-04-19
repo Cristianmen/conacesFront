@@ -17,7 +17,7 @@
     </div>
     <div class="container">
         <ul class="">
-            <a class="nav-link " (click)="view()" style="cursor: pointer;">Actualizar</a>
+            <a class="nav-link " (click)="view()" style="cursor: pointer;"><i class="fas fa-spinner"></i> Actualizar</a>
         </ul>
 
         <app-alert [config]="configAlert" *ngIf="isAlert"></app-alert>
@@ -26,9 +26,8 @@
         <div class= "contianer">
             <div class="table table-striped table-bordered table-responsive" *ngIf="dataRepos.length > 0">
                 <div *ngFor="let item of dataRepos; let i = index" >
-                    <h2 style="cursor: pointer;" (click)="ver(i)" >
-                        {{item.repoId }}<i id="icon-repo" class="far fa-file-pdf"></i>
-                    </h2>
+                   <p > <a href="repositorios" (click)="ver(i)" id=item-repo>{{item.repoId }}</a> <i id="icon-repo" class="far fa-file-pdf"></i>
+                   </p> 
                 </div>
             </div>
         </div>
