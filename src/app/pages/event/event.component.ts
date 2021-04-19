@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AdminDataService } from 'src/app/services/adminData/admin-data.service';
 import { HttpServiceService } from 'src/app/services/httpService/http-service.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,6 +13,7 @@ export class EventComponent implements OnInit {
   formForo: FormGroup;
   
   isAlert = false;
+  isSuscrip = false;
   loading = false;
   configAlert = {};
 
@@ -94,6 +96,7 @@ export class EventComponent implements OnInit {
   constructor(
     private readonly serviceHttp: HttpServiceService,
     private readonly fb: FormBuilder,
+    public readonly AdminService: AdminDataService,
   ) {
 
 
@@ -144,7 +147,20 @@ export class EventComponent implements OnInit {
 
   }
 
-  eliminar(i: any){}
+  eliminar(i: any){
+    console.log('joooj');
+    
+    this.AdminService.dataEventos = this.dataEvents[i];
+    this.isSuscrip = true;
+
+
+
+  }
+
+
+  verTodos(){
+    this.isSuscrip = false;
+  }
   viewForo(){
     
     this.loading = true;

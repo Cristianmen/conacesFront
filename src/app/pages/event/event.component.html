@@ -6,8 +6,8 @@
     <app-alert [config]="configAlert" *ngIf="isAlert"></app-alert>
     <app-loading *ngIf="loading"></app-loading>
 
-<app-suscripcion></app-suscripcion>
-    <div class="row">
+
+    <div class="row" *ngIf="!isSuscrip">
         <div class="col-4">
             <div>
                 <app-card-login [icon]="textCardsAdmin[0].icon" [tittle]="textCardsAdmin[0].tittle"
@@ -28,8 +28,7 @@
                                 <th class="text-center" scope="col">Nombre</th>
                                 <th class="text-center" scope="col">Fecha</th>
                                 <th class="text-center" scope="col">Hora</th>
-                                <th class="text-center" scope="col">Tema</th>
-                                <th class="text-center" scope="col">Descripción</th>
+                               
                                 <th class="text-center" scope="col" colspan="2">Accción</th>
                             </tr>
                         </thead>
@@ -39,12 +38,11 @@
                                 <td class="text-center">{{item.nombre }}</td>
                                 <td class="text-center">{{item.fecha }}</td>
                                 <td class="text-center">{{item.hora }}</td>
-                                <td class="text-center">{{item.tema }}</td>
-                                <td class="text-center">{{item.descripcion }}</td>
+                               
 
 
                                 <td class="text-center" style="cursor: pointer;" (click)="eliminar(i)">
-                                    <a>Participar</a>
+                                    <a>Ver</a>
 
                                 </td>
 
@@ -55,6 +53,70 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container" *ngIf="isSuscrip">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        Nombre del evento:
+                    </div>
+                    <div class="col-8">
+                        <strong>{{this.AdminService.dataEventos.nombre}} </strong>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        Fecha del evento:
+                    </div>
+                    <div class="col-8">
+                        <strong>  {{this.AdminService.dataEventos.fecha}}</strong>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4">
+                        Hora del evento:
+                    </div>
+                    <div class="col-8">
+                        <strong> {{this.AdminService.dataEventos.hora}}</strong>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-4">
+                        Tema del evento:
+                    </div>
+                    <div class="col-8">
+                        <strong> {{this.AdminService.dataEventos.tema}}</strong>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-4">
+                        descripción del evento:
+                    </div>
+                    <div class="col-8">
+                        <strong>{{this.AdminService.dataEventos.descripcion}}</strong>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary" (click)="verTodos()">ver Evetos</button>
+                </div>
+
+                <br>
+                <app-suscripcion></app-suscripcion>
+            </div>
+        </div>
+
+
+
     </div>
 
     <br><br>
@@ -73,15 +135,14 @@
             <div class="card">
                 <div class="card-body overflow-auto">
                     <h3 class="card-title"> <strong>Foro</strong></h3>
-                
+
 
                     <hr>
                     <form class="form-inline" [formGroup]="formForo">
 
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here"
-                                formControlName="tt" id="floatingTextarea2" style="height: 200px"
-                                readonly></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" formControlName="tt"
+                                id="floatingTextarea2" style="height: 200px" readonly></textarea>
                             <label for="floatingTextarea2"></label>
                         </div>
                         <br>

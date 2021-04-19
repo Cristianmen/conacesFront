@@ -6,6 +6,14 @@ import { Injectable } from '@angular/core';
 export class AdminDataService {
   isAdmin= false;
   name='';
+  dataEventos = {
+    eventId: '',
+    nombre: '',
+    fecha: '',
+    hora:'',
+    tema: '',
+    descripcion:''
+  } ;
 
   constructor() { }
 }
